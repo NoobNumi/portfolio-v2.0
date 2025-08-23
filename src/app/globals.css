@@ -1,8 +1,11 @@
 @import "tailwindcss";
-
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&display=swap");
 :root {
-  --background: #ffffff;
+  --background: #f6f6f6;
   --foreground: #171717;
+  --primary: #dbd34c;
+  --primary-text: #333333;
+  --secondary-text: #bdb427;
 }
 
 @theme inline {
@@ -12,15 +15,126 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f6f6f6;
   }
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .text-dark {
+    color: var(--primary-text);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .bg-dark {
+    background-color: var(--primary-text);
+  }
+
+  .rotate-x-3 {
+    transform: rotateX(6deg);
+  }
+  .-rotate-x-3 {
+    transform: rotateX(-6deg);
+  }
+  .rotate-y-3 {
+    transform: rotateY(6deg);
+  }
+  .-rotate-y-3 {
+    transform: rotateY(-6deg);
+  }
+}
+
+.navbar-link {
+  color: var(--primary-text);
+}
+
+.navbar-link:hover {
+  color: var(--secondary-text);
+}
+
+.close-sidemenu,
+.open-sidemenu {
+  border: solid 1px var(--primary);
+  border-radius: 50%;
+  padding: 6px;
+  color: var(--primary-text);
+}
+
+.close-sidemenu:hover,
+.open-sidemenu:hover {
+  background-color: var(--primary);
+  color: var(--foreground);
+}
+
+.border-text-primary {
+  border-color: var(--primary);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 9999px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #333333;
+}
+.spin-slow {
+  animation: spin 30s linear infinite;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.animate-spin-slow {
+  display: inline-block;
+  animation: spin 2s linear infinite;
+}
+
+video {
+  image-rendering: crisp-edges;
+  /* For enhanced browser compatibility: */
+  image-rendering: -webkit-optimize-contrast; /* WebKit browsers */
+  image-rendering: crisp-edges; /* Standard */
+  -ms-interpolation-mode: nearest-neighbor; /* IE */
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 40s linear infinite;
 }
