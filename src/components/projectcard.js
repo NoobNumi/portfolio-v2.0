@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import MuxPlayer from "@mux/mux-player-react";
+import Image from "next/image";
 
 export default function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
@@ -27,28 +28,32 @@ export default function ProjectCard({ project }) {
         onMouseLeave={handleMouseLeave}
       >
         {/* Thumbnail */}
-        <img
+        <Image
+          loading="eager"
           src={project.static_image}
+          fetchPriority="high"
           alt="Static"
-          className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-500 ease-in-out ${
+          width={1920}
+          height={1080}
+          className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 ease-in-out ${
             hovered ? "opacity-0" : "opacity-100"
           }`}
+          priority
         />
-
         {/* Video */}
         <MuxPlayer
           ref={videoRef}
           src={project.autoPlayVideo}
           metadata={{
             video_id: "project-video",
-            video_title: project,
+            video_title: project.name,
             viewer_user_id: "anonymous",
           }}
           autoPlay
           rendition-order="desc"
           max_resolution_tier="2160p"
           controls={false}
-          className={`video absolute inset-0 w-full h-full aspect-video bg-white rounded-lg transition-opacity duration-500 ease-in-out ${
+          className={`video absolute inset-0 w-full h-full aspect-video bg-white rounded-lg transition-opacity duration-300 ease-in-out ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
           muted
@@ -88,10 +93,12 @@ export default function ProjectCard({ project }) {
                   key={idx}
                   className="flex items-center gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full cursor-pointer relative border border-gray-200"
                 >
-                  <img
+                  <Image
                     src={logo}
                     alt={name}
                     className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
+                    width={16}
+                    height={16}
                   />
                   <span className="text-xs sm:text-sm font-medium text-gray-700">
                     {name}

@@ -40,8 +40,6 @@ export default function Home() {
       data-aos="fade-up"
     >
       <main className="px-4 md:px-8 lg:px-16 xl:px-32 py-6 mt-0 md:mt-10 flex flex-col xl:flex-row items-center xl:items-start justify-center w-full gap-10 md:gap-20 xl:gap-30">
-        
-        
         <div className="w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-xs flex-shrink-0">
           <div className="relative flex items-center justify-center mb-10">
             <div className="relative">
@@ -73,8 +71,10 @@ export default function Home() {
                     src={profile}
                     alt="Profile Picture"
                     fill
+                    priority
                     className="object-cover z-10 rounded-full"
                     sizes="(max-width: 640px) 60vw, (max-width: 1024px) 35vw, 350px"
+                    fetchPriority="high"
                   />
                 </div>
               </div>
@@ -106,6 +106,8 @@ export default function Home() {
                       height={24}
                       alt={social.name}
                       className="w-5 h-5 sm:w-6 sm:h-6"
+                      loading="lazy"
+                      fetchPriority="auto"
                     />
                   </div>
                 </div>
@@ -217,10 +219,14 @@ export default function Home() {
               className="skill-marquee-item flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-full hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer relative"
             >
               <span className="skill-border-anim absolute left-0 top-0 w-full h-full rounded-full pointer-events-none"></span>
-              <img
+              <Image
                 src={skill.logo}
                 alt={skill.name}
+                width={16}
+                height={16}
                 className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                loading="lazy"
+                fetchpriority="auto"
               />
               <span className="text-xs sm:text-sm font-medium text-gray-700">
                 {skill.name}

@@ -6,6 +6,7 @@ import { db } from "../../lib/firebase.js";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { Sparkle } from "lucide-react";
+import Image from "next/image";
 
 export default function Experiences() {
   const [experiences, setExperiences] = useState([]);
@@ -141,10 +142,12 @@ export default function Experiences() {
                               className="flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full text-xs hover:bg-primary hover:text-white transition"
                             >
                               {skill.logo && (
-                                <img
+                                <Image
                                   src={skill.logo}
                                   alt={skill.name}
                                   className="w-4 h-4"
+                                  width={16}
+                                  height={16}
                                 />
                               )}
                               {skill.name}
