@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
+import MuxPlayer from "@mux/mux-player-react";
 
 export default function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
@@ -35,20 +36,29 @@ export default function ProjectCard({ project }) {
         />
 
         {/* Video */}
-        <video
+        <MuxPlayer
           ref={videoRef}
           src={project.autoPlayVideo}
-          muted
-          playsInline
-          className={`absolute inset-0 w-full h-full aspect-video bg-white rounded-lg transition-opacity duration-500 ease-in-out ${
+          metadata={{
+            video_id: "project-video",
+            video_title: project,
+            viewer_user_id: "anonymous",
+          }}
+          autoPlay
+          rendition-order="desc"
+          max_resolution_tier="2160p"
+          controls={false}
+          className={`video absolute inset-0 w-full h-full aspect-video bg-white rounded-lg transition-opacity duration-500 ease-in-out ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
+          muted
           style={{
-            width: "1920px", // Display size smaller than native
-            height: "auto",
-            objectFit: "contain",
-            imageRendering: "auto",
-            WebkitOptimizeContrast: "auto", // for Chrome/Safari
+            width: "100%",
+            height: "100%",
+            "--controls": "none",
+            "--controls-backdrop-color": "transparent",
+            "--media-object-size": "cover",
+            "--media-object-position": "center",
           }}
         />
       </div>

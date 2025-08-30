@@ -39,7 +39,9 @@ export default function Home() {
       className="pt-24 w-full mx-auto flex flex-col relative items-center justify-center xl:h-screen h-full my-5 md:my-0"
       data-aos="fade-up"
     >
-      <main className="px-4 md:px-8 lg:px-16 xl:px-32 py-6 mt-10 flex flex-col xl:flex-row items-center xl:items-start justify-center w-full gap-10 md:gap-20 xl:gap-30">
+      <main className="px-4 md:px-8 lg:px-16 xl:px-32 py-6 mt-0 md:mt-10 flex flex-col xl:flex-row items-center xl:items-start justify-center w-full gap-10 md:gap-20 xl:gap-30">
+        
+        
         <div className="w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-xs flex-shrink-0">
           <div className="relative flex items-center justify-center mb-10">
             <div className="relative">
@@ -77,7 +79,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="absolute bg-white px-3 py-1 rounded-full shadow-md text-[9px] md:text-sm font-medium z-9999 border-text-primary text-nowrap"
+                className="absolute hover:translate-y-[-2px] cursor-pointer transition-all ease-in-out bg-white px-3 py-2 rounded-full shadow-md text-[9px] md:text-sm font-medium z-9999 border-text-primary text-nowrap"
                 style={{
                   right: "-10%",
                   bottom: "10%",

@@ -1,8 +1,7 @@
 "use client";
 import Navbar from "../../components/navbar";
-import Hr from "../../components/hr.js";
 import AOSWrapper from "../../components/AOSWrapper";
-import { Table2, Paintbrush, CodeXml } from "lucide-react";
+import { Table2, Paintbrush, CodeXml, Sparkle } from "lucide-react";
 
 export default function Services() {
   return (
@@ -15,7 +14,13 @@ export default function Services() {
         <main className="px-4 ">
           <h1 className="text-2xl lg:text-4xl font-bold mb-2 text-dark text-center">
             SERVICES
-            <Hr className="max-w-1/6 mx-auto" />
+            <div className="flex items-center relative justify-center my-4 w-fit mx-auto">
+              <span className="border-text-primary w-[80px]" />
+              <span className="mx-2 animate-spin-slow text-2xl">
+                <Sparkle className="text-[#f6f6f6]" fill="#dbd34c" size={50} />
+              </span>
+              <span className="border-text-primary w-[80px]" />
+            </div>
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 max-w-6xl cursor-pointer">

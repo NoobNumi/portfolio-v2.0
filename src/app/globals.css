@@ -138,3 +138,12 @@ video {
   display: flex;
   animation: marquee 40s linear infinite;
 }
+
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-text);
+}
+
+mux-player::part(media-layer) {
+  background-color: white;
+}

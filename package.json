@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mux/mux-player-react": "^3.5.3",
     "aos": "^2.3.4",
     "firebase": "^12.1.0",
     "lucide-react": "^0.541.0",

@@ -34,12 +34,13 @@ export default function Navbar() {
           <span className="text-primary">.</span>
         </Link>
         {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 lg:space-x-12 cursor-pointer font-semibold">
+        <ul className="hidden md:flex space-x-8 lg:space-x-12 justify-center cursor-pointer font-semibold">
           <li>
             <Link href="/">
               <span className="navbar-link">Home</span>
             </Link>
           </li>
+
           <li>
             <Link href="/services">
               <span className="navbar-link">Services</span>
@@ -103,6 +104,13 @@ export default function Navbar() {
               <span className="text-dark">Nin</span>
               <span className="text-primary">.</span>
             </Link>
+            {/* Mobile toggle button */}
+            <div
+              className="sm:hidden cursor-pointer open-sidemenu transition-transform duration-700 ease-in-out"
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <X /> : <Menu />}
+            </div>
           </div>
           <ul className="flex flex-col gap-10 cursor-pointer font-semibold">
             <li>
@@ -110,6 +118,7 @@ export default function Navbar() {
                 <span className="navbar-link">Home</span>
               </Link>
             </li>
+
             <li>
               <Link href="/services">
                 <span className="navbar-link">Services</span>
