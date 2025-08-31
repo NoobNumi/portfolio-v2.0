@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Plyr from "plyr";
 import "plyr/dist/plyr.css";
 
 export default function ProjectCard({ project }) {
@@ -13,22 +12,30 @@ export default function ProjectCard({ project }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (containerRef.current) {
-      playerRef.current = new Plyr(
-        containerRef.current.querySelector("video"),
-        {
-          autoplay: false,
-          muted: true,
-          loop: { active: true },
-          controls: [],
-        }
-      );
+    let Plyr; // declare here
 
-      playerRef.current.on("ready", () => {
-        console.log("Plyr ready");
-        setReady(true);
-      });
-    }
+    const init = async () => {
+      const module = await import("plyr"); // ⬅️ lazy import only on client
+      Plyr = module.default;
+      if (containerRef.current) {
+        playerRef.current = new Plyr(
+          containerRef.current.querySelector("video"),
+          {
+            autoplay: false,
+            muted: true,
+            loop: { active: true },
+            controls: [],
+          }
+        );
+
+        playerRef.current.on("ready", () => {
+          console.log("Plyr ready");
+          setReady(true);
+        });
+      }
+    };
+
+    init();
 
     return () => {
       if (playerRef.current) {

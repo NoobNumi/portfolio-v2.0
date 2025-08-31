@@ -1,12 +1,12 @@
 "use client";
 import Navbar from "../../components/navbar";
-import AOSWrapper from "../../components/AOSWrapper";
 import Hr from "../../components/hr";
 import { useState, useEffect } from "react";
 import { db } from "../../lib/firebase.js";
 import { collection, getDocs } from "firebase/firestore";
 import { Sparkle } from "lucide-react";
 import ProjectCard from "../../components/projectcard";
+import dynamic from "next/dynamic";
 
 const AOSWrapper = dynamic(() => import("../../components/AOSWrapper"), {
   ssr: false,
