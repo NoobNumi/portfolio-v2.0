@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="absolute hover:translate-y-[-2px] cursor-pointer transition-all ease-in-out bg-white px-3 py-2 rounded-full shadow-md text-[9px] md:text-sm font-medium z-9999 border-text-primary text-nowrap"
+                className="absolute hover:translate-y-[-2px] pointer transition-all ease-in-out bg-white px-3 py-2 rounded-full shadow-md text-[9px] md:text-sm font-medium z-9999 border-text-primary text-nowrap"
                 style={{
                   right: "-10%",
                   bottom: "10%",
@@ -163,6 +163,7 @@ export default function Home() {
                 hover:before:scale-x-100
                 border-2 border-transparent
                 hover:border-2
+                pointer
               "
             >
               <div className="relative overflow-hidden">
@@ -190,6 +191,7 @@ export default function Home() {
                 border-2 border-[#dbd34c]
                 hover:border-2
                 hover:bg-[#dbd34c]
+                pointer
               "
             >
               <div className="relative overflow-hidden">
@@ -216,7 +218,7 @@ export default function Home() {
           {logos.concat(logos).map((skill, i) => (
             <div
               key={i}
-              className="skill-marquee-item flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-full hover:-translate-y-2 transition-all duration-500 ease-in-out cursor-pointer relative"
+              className="skill-marquee-item flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-full hover:-translate-y-2 transition-all duration-500 ease-in-out pointer relative"
             >
               <span className="skill-border-anim absolute left-0 top-0 w-full h-full rounded-full pointer-events-none"></span>
               <Image

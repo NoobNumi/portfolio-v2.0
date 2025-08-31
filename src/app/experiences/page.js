@@ -73,7 +73,7 @@ export default function Experiences() {
         <main className="max-w-7xl w-full px-6">
           <div data-aos="fade-up" className="text-center mb-10">
             <h1 className="text-2xl lg:text-4xl font-bold mb-2 text-dark">
-              ABOUT
+              EXPERIENCES
             </h1>
             <div className="flex items-center relative justify-center my-4 w-fit mx-auto">
               <span className="border-text-primary w-[50px]" />

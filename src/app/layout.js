@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "plyr/dist/plyr.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,18 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Niña Gillian Villamin - Portfolio",
-  description: "A showcase of my work and skills",
-  keywords: ["portfolio", "web development", "programming"],
+  title: "Niña Gillian Villamin - Web Developer Portfolio",
+  description:
+    "Explore the portfolio of Niña Gillian Villamin, a passionate web developer specializing in modern web technologies and creative solutions.",
+  keywords: [
+    "Niña Gillian Villamin",
+    "portfolio",
+    "web developer",
+    "frontend",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "programming",
+    "UI/UX",
+  ],
   authors: [
     {
-      name: "Niña Gillian Villamin - Portfolio",
+      name: "Niña Gillian Villamin",
       url: "https://github.com/NoobNumi",
     },
   ],
   openGraph: {
-    title: "Nin's Portfolio",
-    description: "A showcase of my work and skills",
+    title: "Niña Gillian Villamin - Web Developer Portfolio",
+    description:
+      "Explore the portfolio of Niña Gillian Villamin, a passionate web developer specializing in modern web technologies and creative solutions.",
     url: "http://ninv.me/",
     siteName: "Niña Gillian Villamin - Portfolio",
     images: [
@@ -37,6 +50,14 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Niña Gillian Villamin - Web Developer Portfolio",
+    description:
+      "Explore the portfolio of Niña Gillian Villamin, a passionate web developer specializing in modern web technologies and creative solutions.",
+    images: ["/logo_new.png"],
+    creator: "@NoobNumi",
+  },
   icons: {
     icon: [
       {
@@ -45,11 +66,19 @@ export const metadata = {
       },
     ],
   },
+  robots: "index, follow",
+  alternates: {
+    canonical: "http://ninv.me/",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

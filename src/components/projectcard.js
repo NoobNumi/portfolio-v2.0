@@ -1,31 +1,60 @@
-import { useState, useRef } from "react";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import MuxPlayer from "@mux/mux-player-react";
 import Image from "next/image";
+import Plyr from "plyr";
+import "plyr/dist/plyr.css";
 
 export default function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
-  const videoRef = useRef(null);
+  const containerRef = useRef(null); // wrapper for Plyr
+  const playerRef = useRef(null);
+  const [ready, setReady] = useState(false);
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-    videoRef.current?.play();
-  };
+  useEffect(() => {
+    if (containerRef.current) {
+      playerRef.current = new Plyr(
+        containerRef.current.querySelector("video"),
+        {
+          autoplay: false,
+          muted: true,
+          loop: { active: true },
+          controls: [],
+        }
+      );
 
-  const handleMouseLeave = () => {
-    setHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      playerRef.current.on("ready", () => {
+        console.log("Plyr ready");
+        setReady(true);
+      });
     }
-  };
+
+    return () => {
+      if (playerRef.current) {
+        playerRef.current.destroy();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (playerRef.current && ready) {
+      if (hovered) {
+        playerRef.current.play().catch((err) => {
+          console.warn("Autoplay blocked:", err);
+        });
+      } else {
+        playerRef.current.pause();
+      }
+    }
+  }, [hovered, ready]);
 
   return (
-    <div className="card bg-white p-4 rounded-xl w-full max-w-7xl mx-auto mb-6 ">
+    <div className="card bg-white p-4 rounded-xl w-full max-w-7xl mx-auto mb-6">
       <div
         className="relative aspect-video overflow-hidden rounded-lg group cursor-zoom-in"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
         {/* Thumbnail */}
         <Image
@@ -40,34 +69,18 @@ export default function ProjectCard({ project }) {
           }`}
           priority
         />
-        {/* Video */}
-        <MuxPlayer
-          ref={videoRef}
-          src={project.autoPlayVideo}
-          metadata={{
-            video_id: "project-video",
-            video_title: project.name,
-            viewer_user_id: "anonymous",
-          }}
-          autoPlay
-          rendition-order="desc"
-          max_resolution_tier="2160p"
-          controls={false}
-          className={`video absolute inset-0 w-full h-full aspect-video bg-white rounded-lg transition-opacity duration-300 ease-in-out ${
+
+        <div
+          ref={containerRef}
+          className={`plyr absolute inset-0 transition-opacity duration-300 cursor-play  ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
-          muted
-          style={{
-            width: "100%",
-            height: "100%",
-            "--controls": "none",
-            "--controls-backdrop-color": "transparent",
-            "--media-object-size": "cover",
-            "--media-object-position": "center",
-          }}
-        />
+        >
+          <video playsInline muted loop preload="metadata">
+            <source src={project.autoPlayVideo} type="video/mp4" />
+          </video>
+        </div>
       </div>
-      {/* Text */}
       <div className="mt-5">
         <span className="text-[12px] tracking-widest mb-2 font-semibold text-gray-400 block uppercase">
           {project.project_type}

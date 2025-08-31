@@ -23,7 +23,7 @@ export default function Services() {
             </div>
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 max-w-6xl cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 max-w-6xl pointer">
             <div className="card bg-white p-5 rounded-xl hover:bg-[#dbd34c] transition-all group hover:-translate-y-2 duration-500 ease-in-out">
               <div className="bg-primary p-2 rounded-full w-12 h-12 flex items-center justify-center mb-2 transition-colors duration-500 group-hover:bg-[#333333]">
                 <Table2 className="transition-colors duration-300 text-dark group-hover:text-[#dbd34c]" />

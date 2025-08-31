@@ -86,6 +86,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: url("/cursors/main-cursor.png") 0 0, auto;
+}
+
+.pointer {
+  cursor: url("/cursors/pointer.png") 0 0, auto !important;
 }
 
 .outlined-text {
@@ -146,4 +151,24 @@ video {
 
 mux-player::part(media-layer) {
   background-color: white;
+}
+
+.cursor-play {
+  cursor: url("/cursors/play-video.png") 0 0, auto;
+}
+
+/* force Plyr to fill parent like Next/Image */
+.plyr,
+.plyr__video-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  padding-top: 0 !important;
+  background-color: #ffffff !important;
+}
+
+.plyr video {
+  object-fit: contain; /* matches your Image cover */
+  width: 100%;
+  height: 100%;
 }

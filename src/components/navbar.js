@@ -28,32 +28,32 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          className="logo font-semibold text-[24px] md:text-[30px]"
+          className="logo pointer font-semibold text-[24px] md:text-[30px]"
         >
           <span className="text-dark">Nin</span>
           <span className="text-primary">.</span>
         </Link>
         {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 lg:space-x-12 justify-center cursor-pointer font-semibold">
+        <ul className="hidden md:flex space-x-8 lg:space-x-12 justify-center font-semibold">
           <li>
             <Link href="/">
-              <span className="navbar-link">Home</span>
+              <span className="navbar-link pointer">Home</span>
             </Link>
           </li>
 
           <li>
             <Link href="/services">
-              <span className="navbar-link">Services</span>
+              <span className="navbar-link pointer">Services</span>
             </Link>
           </li>
           <li>
             <Link href="/projects">
-              <span className="navbar-link">Projects</span>
+              <span className="navbar-link pointer">Projects</span>
             </Link>
           </li>
           <li>
             <Link href="/experiences">
-              <span className="navbar-link">Experiences</span>
+              <span className="navbar-link pointer">Experiences</span>
             </Link>
           </li>
         </ul>
@@ -72,6 +72,7 @@ export default function Navbar() {
             before:transition-transform before:duration-500
             hover:before:scale-x-100
             border-2 border-transparent
+            pointer
             hover:border-2
           "
         >
@@ -86,7 +87,7 @@ export default function Navbar() {
         </Link>
         {/* Mobile toggle button */}
         <div
-          className="md:hidden cursor-pointer open-sidemenu transition-transform duration-700 ease-in-out"
+          className="md:hidden pointer open-sidemenu transition-transform duration-700 ease-in-out"
           onClick={() => setOpen(!open)}
         >
           {open ? <X /> : <Menu />}
@@ -106,13 +107,13 @@ export default function Navbar() {
             </Link>
             {/* Mobile toggle button */}
             <div
-              className="sm:hidden cursor-pointer open-sidemenu transition-transform duration-700 ease-in-out"
+              className="sm:hidden pointer open-sidemenu transition-transform duration-700 ease-in-out"
               onClick={() => setOpen(!open)}
             >
               {open ? <X /> : <Menu />}
             </div>
           </div>
-          <ul className="flex flex-col gap-10 cursor-pointer font-semibold">
+          <ul className="flex flex-col gap-10 pointer font-semibold">
             <li>
               <Link href="/">
                 <span className="navbar-link">Home</span>
@@ -150,6 +151,7 @@ export default function Navbar() {
               hover:before:scale-x-100
               border-2 border-transparent
               hover:border-2
+              pointer
             "
           >
             <div className="relative overflow-hidden">
