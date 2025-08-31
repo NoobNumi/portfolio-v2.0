@@ -8,6 +8,10 @@ import { collection, getDocs } from "firebase/firestore";
 import { Sparkle } from "lucide-react";
 import ProjectCard from "../../components/projectcard";
 
+const AOSWrapper = dynamic(() => import("../../components/AOSWrapper"), {
+  ssr: false,
+});
+
 export default function Projects() {
   const [projectLists, setProjectLists] = useState([]);
 
