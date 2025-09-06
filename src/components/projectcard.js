@@ -111,7 +111,7 @@ export default function ProjectCard({ project }) {
               return (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full cursor-pointer relative border border-gray-200"
+                  className="flex items-center pointer gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full cursor-pointer relative border border-gray-200"
                 >
                   <Image
                     src={logo}
@@ -132,7 +132,7 @@ export default function ProjectCard({ project }) {
             <Link
               href={project.site_link}
               target="_blank"
-              className="group flex items-center justify-center relative overflow-hidden rounded-full font-semibold px-4 sm:px-5 md:px-7 py-2 bg-primary text-dark transition-colors duration-300 before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 hover:before:scale-x-100 border-2 border-transparent hover:border-2 text-xs sm:text-sm md:text-base"
+              className="group pointer flex items-center justify-center relative overflow-hidden rounded-full font-semibold px-4 sm:px-5 md:px-7 py-2 bg-primary text-dark transition-colors duration-300 before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 hover:before:scale-x-100 border-2 border-transparent hover:border-2 text-xs sm:text-sm md:text-base"
             >
               <div className="relative overflow-hidden">
                 <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
@@ -149,7 +149,7 @@ export default function ProjectCard({ project }) {
             <Link
               href={project.figma_link}
               target="_blank"
-              className="group flex items-center justify-center relative overflow-hidden rounded-full font-semibold px-4 sm:px-5 md:px-7 py-2 bg-white text-dark transition-colors duration-300 before:content-[''] before:absolute before:inset-0 before:bg-[#dbd34c] before:scale-x-0 before:origin-left before:transition-transform before:duration-500 hover:before:scale-x-100 border-2 border-[#dbd34c] hover:border-2 hover:bg-[#dbd34c] text-xs sm:text-sm md:text-base"
+              className="group pointer flex items-center justify-center relative overflow-hidden rounded-full font-semibold px-4 sm:px-5 md:px-7 py-2 bg-white text-dark transition-colors duration-300 before:content-[''] before:absolute before:inset-0 before:bg-[#dbd34c] before:scale-x-0 before:origin-left before:transition-transform before:duration-500 hover:before:scale-x-100 border-2 border-[#dbd34c] hover:border-2 hover:bg-[#dbd34c] text-xs sm:text-sm md:text-base"
             >
               <div className="relative overflow-hidden">
                 <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
@@ -166,7 +166,7 @@ export default function ProjectCard({ project }) {
             <Link
               href={project.github_repo}
               target="_blank"
-              className="group flex items-center justify-center relative overflow-hidden rounded-full font-semibold px-4 sm:px-5 md:px-7 py-2 bg-white text-dark transition-colors duration-300 before:content-[''] before:absolute before:inset-0 before:bg-[#dbd34c] before:scale-x-0 before:origin-left before:transition-transform before:duration-500 hover:before:scale-x-100 border-2 border-[#dbd34c] hover:border-2 hover:bg-[#dbd34c] text-xs sm:text-sm md:text-base"
+              className="group pointer flex items-center justify-center relative overflow-hidden rounded-full font-semibold px-4 sm:px-5 md:px-7 py-2 bg-white text-dark transition-colors duration-300 before:content-[''] before:absolute before:inset-0 before:bg-[#dbd34c] before:scale-x-0 before:origin-left before:transition-transform before:duration-500 hover:before:scale-x-100 border-2 border-[#dbd34c] hover:border-2 hover:bg-[#dbd34c] text-xs sm:text-sm md:text-base"
             >
               <div className="relative overflow-hidden">
                 <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">

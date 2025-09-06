@@ -81,7 +81,7 @@ export default function Home() {
               <div
                 className="absolute hover:translate-y-[-2px] pointer transition-all ease-in-out bg-white px-3 py-2 rounded-full shadow-md text-[9px] md:text-sm font-medium z-9999 border-text-primary text-nowrap"
                 style={{
-                  right: "-10%",
+                right: "-10%",
                   bottom: "10%",
                 }}
               >
@@ -96,7 +96,7 @@ export default function Home() {
                 key={i}
                 href={social.link}
                 target="_blank"
-                className="bg-primary p-1 rounded-full group relative group hover:-translate-y-2 duration-500 ease-in-out"
+                className="bg-primary pointer p-1 rounded-full group relative group hover:-translate-y-2 duration-500 ease-in-out"
               >
                 <div className="bg-white p-1 rounded-full">
                   <div className="bg-primary p-2 rounded-full flex items-center justify-center">
