@@ -81,7 +81,7 @@ export default function Home() {
               <div
                 className="absolute hover:translate-y-[-2px] pointer transition-all ease-in-out bg-white px-3 py-2 rounded-full shadow-md text-[9px] md:text-sm font-medium z-9999 border-text-primary text-nowrap"
                 style={{
-                right: "-10%",
+                  right: "-10%",
                   bottom: "10%",
                 }}
               >
@@ -228,7 +228,7 @@ export default function Home() {
                 height={16}
                 className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                 loading="lazy"
-                fetchpriority="auto"
+                fetchPriority="auto"
               />
               <span className="text-xs sm:text-sm font-medium text-gray-700">
                 {skill.name}
