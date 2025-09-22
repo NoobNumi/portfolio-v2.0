@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { X, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,6 +17,10 @@ export default function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const pathname = usePathname();
+
+  const isActive = (href) => pathname === href;
 
   return (
     <div>
@@ -37,23 +42,47 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-8 lg:space-x-12 justify-center font-semibold">
           <li>
             <Link href="/">
-              <span className="navbar-link pointer">Home</span>
+              <span
+                className={`navbar-link pointer  ${
+                  isActive("/") ? "text-secondary" : ""
+                }`}
+              >
+                Home
+              </span>
             </Link>
           </li>
 
           <li>
             <Link href="/services">
-              <span className="navbar-link pointer">Services</span>
+              <span
+                className={`navbar-link pointer  ${
+                  isActive("/services") ? "text-secondary" : ""
+                }`}
+              >
+                Services
+              </span>
             </Link>
           </li>
           <li>
             <Link href="/projects">
-              <span className="navbar-link pointer">Projects</span>
+              <span
+                className={`navbar-link pointer  ${
+                  isActive("/projects") ? "text-secondary" : ""
+                }`}
+              >
+                Projects
+              </span>
             </Link>
           </li>
           <li>
             <Link href="/experiences">
-              <span className="navbar-link pointer">Experiences</span>
+              <span
+                className={`navbar-link pointer  ${
+                  isActive("/experiences") ? "text-secondary" : ""
+                }`}
+              >
+                Experiences
+              </span>
             </Link>
           </li>
         </ul>
