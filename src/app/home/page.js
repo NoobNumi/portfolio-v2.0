@@ -134,10 +134,9 @@ export default function Home() {
               </span>
             </p>
             <p className="mt-5 sm:mt-7 leading-6 sm:leading-7 lg:leading-8 text-sm sm:text-base lg:text-lg">
-              I’m a 23-year old{" "}
-              <span className="font-semibold">Web App Developer</span> focusing
-              on <span className="font-semibold">Front End Development</span>{" "}
-              and a{" "}
+              I’m a 24-year old{" "}
+              <span className="font-semibold">Web Developer</span> focusing on{" "}
+              <span className="font-semibold">Front End Development</span> and a{" "}
               <span className="outlined-text font-extrabold tracking-widest">
                 UI / UX Designer
               </span>{" "}
