@@ -15,7 +15,7 @@ export default function ProjectCard({ project }) {
     let Plyr; // declare here
 
     const init = async () => {
-      const module = await import("plyr"); // ⬅️ lazy import only on client
+      const module = await import("plyr");
       Plyr = module.default;
       if (containerRef.current) {
         playerRef.current = new Plyr(
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }) {
             muted: true,
             loop: { active: true },
             controls: [],
-          }
+          },
         );
 
         playerRef.current.on("ready", () => {

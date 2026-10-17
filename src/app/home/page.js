@@ -123,9 +123,9 @@ export default function Home() {
             Front End Developer
           </h1>
           <Hr />
-          <h1 className="text-xl sm:text-2xl lg:text-5xl font-bold mb-2 outlined-text">
-            UI/UX Designer
-          </h1>
+          <h2 className="text-xl sm:text-2xl lg:text-5xl font-bold mb-2 outlined-text">
+            Full Stack Capable
+          </h2>
           <div className="mt-6 sm:mt-9">
             <p className="text-base sm:text-lg lg:text-2xl">
               Hey, I’m{" "}
@@ -134,16 +134,17 @@ export default function Home() {
               </span>
             </p>
             <p className="mt-5 sm:mt-7 leading-6 sm:leading-7 lg:leading-8 text-sm sm:text-base lg:text-lg">
-              I’m a 24-year old{" "}
-              <span className="font-semibold">Web Developer</span> focusing on{" "}
-              <span className="font-semibold">Front End Development</span> and a{" "}
+              I’m a <span className="font-semibold">Front End Developer</span>{" "}
+              based in the Philippines, comfortable across the{" "}
+              <span className="font-semibold">full stack</span>. I build and
+              maintain production web apps with{" "}
+              <span className="font-semibold">Vue, Nuxt, Next.js</span> and{" "}
+              <span className="font-semibold">Laravel</span>, and I also{" "}
               <span className="outlined-text font-extrabold tracking-widest">
-                UI / UX Designer
+                design
               </span>{" "}
-              based in the Philippines. I am passionate in creating beautiful
-              and functional web applications and product designs. I am always
-              open for new opportunities and collaborations. Feel free to
-              contact me!
+              the interfaces I build. I’m open to new opportunities and
+              collaborations, so feel free to contact me!
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start mt-8 w-full gap-3">
